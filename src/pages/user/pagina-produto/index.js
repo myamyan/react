@@ -83,7 +83,7 @@ async function carregarProdutosPorCategoria(categoria) {
       return;
     }
 
-    const response = await fetch(`http://localhost:5036/buscarcategoriafiltros?categoria=${categoria}`);
+    const response = await fetch(`http://129.148.42.252:5036/buscarcategoriafiltros?categoria=${categoria}`);
     const data = await response.json();
 
     if (Array.isArray(data)) {
@@ -104,7 +104,7 @@ async function filtroCategoria(categoriaDesejada) {
   setCategoriaSelecionada(categoriaDesejada);
 
   try {
-    const response = await fetch(`http://localhost:5036/buscarcategoriafiltros?categoria=${categoriaDesejada}`);
+    const response = await fetch(`http://129.148.42.252:5036/buscarcategoriafiltros?categoria=${categoriaDesejada}`);
     const data = await response.json();
 
     if (Array.isArray(data)) {
@@ -125,7 +125,7 @@ async function filtroCategoria(categoriaDesejada) {
 async function adicionarAoCarrinho(produto) {
   try {
     
-    const r= await axios.post("http://localhost:5036//user/cadastro/pedido");
+    const r= await axios.post("http://129.148.42.252:5036//user/cadastro/pedido");
 
     const idDoPedido = r.id_pedido;
   } catch (error) {

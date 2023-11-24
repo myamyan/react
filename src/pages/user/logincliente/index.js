@@ -18,7 +18,7 @@ export default function LoginCliente() {
         );
       }
 
-      const response = await axios.post('http://localhost:5036/user/login/cliente', {
+      const response = await axios.post('http://129.148.42.252:5036/user/login/cliente', {
         email: email,
         senha: senha,
       });

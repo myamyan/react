@@ -55,7 +55,7 @@ const [total, setTotal]= useState(0);
     }
 
     async function finalizar () {
-        const r= await axios.post('http://localhost:5036//user/cadastro/pedido')
+        const r= await axios.post('http://129.148.42.252:5036//user/cadastro/pedido')
 
 
     }
@@ -64,7 +64,7 @@ const [total, setTotal]= useState(0);
     async function finalizar() {
         try {
          
-          const response = await axios.post('http://localhost:5036/user/cadastro/pedido');
+          const response = await axios.post('http://129.148.42.252:5036/user/cadastro/pedido');
           console.log(response.data); 
           alert('Compra finalizada!');
         } catch (error) {
@@ -94,7 +94,7 @@ const [total, setTotal]= useState(0);
 
         {sacola.map((item) =>
 <div className='detalhe-imagem1'>
-<img src={"http://localhost:5036/" + item.imagem}
+<img src={"http://129.148.42.252:5036/" + item.imagem}
 />
 <div className='detalhe-components'>
                 <h1  > {item.nm_produto} </h1>

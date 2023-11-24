@@ -42,7 +42,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   async function buscarCategoria() {
     try {
       const r = await axios.get(
-        "http://localhost:5036/adm/cadastro/categoria",
+        "http://129.148.42.252:5036/adm/cadastro/categoria",
         {
           categoria: categoria,
         }
@@ -59,7 +59,7 @@ const [idcategoria, setIdcategoria] = useState(null);
     async function fetchData() {
       try {
         const response = await axios.get(
-          "http://localhost:5036/buscarcategoria"
+          "http://129.148.42.252:5036/buscarcategoria"
         );
         const data = response.data;
         console.log("Dados recebidos:", data);
@@ -78,7 +78,7 @@ const [idcategoria, setIdcategoria] = useState(null);
       console.log("Enviando requisição para adicionar categoria:", novaCategoria);
   
       const r = await axios.post(
-        "http://localhost:5036/adm/cadastro/categoria",
+        "http://129.148.42.252:5036/adm/cadastro/categoria",
         {
           nome: novaCategoria,
         }
@@ -103,7 +103,7 @@ const [idcategoria, setIdcategoria] = useState(null);
 
   async function buscarDesigners() {
     try {
-      const r = await axios.get("http://localhost:5036/buscardesigner", {
+      const r = await axios.get("http://129.148.42.252:5036/buscardesigner", {
         designer: novodesigner,
       });
 
@@ -118,7 +118,7 @@ const [idcategoria, setIdcategoria] = useState(null);
     async function fetchData() {
       try {
         const response = await axios.get(
-          "http://localhost:5036/buscarcategoria"
+          "http://129.148.42.252:5036/buscarcategoria"
         );
         const data = response.data;
         console.log("Dados recebidos:", data);
@@ -135,7 +135,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   async function postardesigner() {
     try {
       const response = await axios.post(
-        "http://localhost:5036/adm/cadastro/designer",
+        "http://129.148.42.252:5036/adm/cadastro/designer",
         {
           nome: novodesigner,
         }
@@ -156,7 +156,7 @@ const [idcategoria, setIdcategoria] = useState(null);
     async function fetchData() {
       try {
         const responseCategorias = await axios.get(
-          "http://localhost:5036/buscarcategoria"
+          "http://129.148.42.252:5036/buscarcategoria"
         );
         const dataCategorias = responseCategorias.data;
         console.log("Dados de Categorias recebidos:", dataCategorias);
@@ -164,7 +164,7 @@ const [idcategoria, setIdcategoria] = useState(null);
         setDadosCarregados(true);
 
         const responseDesigners = await axios.get(
-          "http://localhost:5036/buscardesigner"
+          "http://129.148.42.252:5036/buscardesigner"
         );
         const dataDesigners = responseDesigners.data;
         console.log("Dados de Designers recebidos:", dataDesigners);
@@ -201,7 +201,7 @@ const [idcategoria, setIdcategoria] = useState(null);
 
   async function buscarCore() {
     try {
-      const response = await axios.get("http://localhost:5036/buscarcores");
+      const response = await axios.get("http://129.148.42.252:5036/buscarcores");
       const data = response.data;
       setBuscarCores(data);
     } catch (error) {
@@ -216,7 +216,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   async function postarCor() {
     try {
       const response = await axios.post(
-        "http://localhost:5036/adm/cadastro/cores",
+        "http://129.148.42.252:5036/adm/cadastro/cores",
         {
           codhexa: novacor,
         }
@@ -235,7 +235,7 @@ const [idcategoria, setIdcategoria] = useState(null);
 
   async function buscartecido() {
     try {
-      const response = await axios.get("http://localhost:5036/buscartecido");
+      const response = await axios.get("http://129.148.42.252:5036/buscartecido");
       const data = response.data;
       setBuscarTecidos(data);
     } catch (error) {
@@ -250,7 +250,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   async function postartecido() {
     try {
       const response = await axios.post(
-        "http://localhost:5036/adm/cadastro/tecidos",
+        "http://129.148.42.252:5036/adm/cadastro/tecidos",
         {
           tipo: novotecido,
         }
@@ -271,7 +271,7 @@ const [idcategoria, setIdcategoria] = useState(null);
 
   async function buscartamanhos() {
     try {
-      const response = await axios.get("http://localhost:5036/buscarTAMANHO");
+      const response = await axios.get("http://129.148.42.252:5036/buscarTAMANHO");
       const data = response.data;
       setBuscartamanho(data);
     } catch (error) {
@@ -286,7 +286,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   async function postartamanho() {
     try {
       const response = await axios.post(
-        "http://localhost:5036/adm/cadastro/tamanho",
+        "http://129.148.42.252:5036/adm/cadastro/tamanho",
         {
           tamanho: novotamanho,
         }
@@ -306,9 +306,9 @@ const [idcategoria, setIdcategoria] = useState(null);
   async function Deletar(id, idImagem, idCategoria) {
     try {
       if (id) {
-        if(idImagem) await axios.delete('http://localhost:5036/adm/deletar/imagem/' + idImagem);
-        if(idCategoria) await axios.delete('http://localhost:5036/adm/desassociacao/categoria-produto/' + idCategoria);
-        const resposta = await axios.delete(`http://localhost:5036/adm/produto/deletar/${id}` );
+        if(idImagem) await axios.delete('http://129.148.42.252:5036/adm/deletar/imagem/' + idImagem);
+        if(idCategoria) await axios.delete('http://129.148.42.252:5036/adm/desassociacao/categoria-produto/' + idCategoria);
+        const resposta = await axios.delete(`http://129.148.42.252:5036/adm/produto/deletar/${id}` );
 
         // if (resposta.status === 200) {
         //   console.log('Produto excluído com sucesso');
@@ -330,7 +330,7 @@ const [idcategoria, setIdcategoria] = useState(null);
       formData.append('imagem', imagem);
 
       const r = await axios.post(
-        'http://localhost:5036/adm/cadastro/produto/imagem',
+        'http://129.148.42.252:5036/adm/cadastro/produto/imagem',
         formData,
         {
           headers: {
@@ -364,7 +364,7 @@ const [idcategoria, setIdcategoria] = useState(null);
       }
 
       const r = await axios.post(
-        "http://localhost:5036/adm/associacao/imagem-produto",
+        "http://129.148.42.252:5036/adm/associacao/imagem-produto",
         {
           idProduto: produtoid,
           idImagem: imagemId
@@ -400,7 +400,7 @@ const [idcategoria, setIdcategoria] = useState(null);
       });
 
       const r = await axios.post(
-        "http://localhost:5036/adm/cadastro/produto",
+        "http://129.148.42.252:5036/adm/cadastro/produto",
         {
           nome: nome,
           preco: preco,
@@ -444,7 +444,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   }
 
   async function salvarCategoria(idProduto, idCategoria) {
-    let url = "http://localhost:5036/adm/associacao/categoria-produto";
+    let url = "http://129.148.42.252:5036/adm/associacao/categoria-produto";
 
     await axios.post(url, {
       idProduto: idProduto,
@@ -453,7 +453,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   }
 
   async function salvarTamanho(idProduto, idTamanho) {
-    let url = "http://localhost:5036/adm/associacao/tamanho-produto";
+    let url = "http://129.148.42.252:5036/adm/associacao/tamanho-produto";
 
     await axios.post(url, {
       idProduto: idProduto,
@@ -462,7 +462,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   }
 
   async function salvarCor(idProduto, idCor) {
-    let url = "http://localhost:5036/adm/associacao/cor-produto";
+    let url = "http://129.148.42.252:5036/adm/associacao/cor-produto";
 
     await axios.post(url, {
       idProduto: idProduto,
@@ -471,7 +471,7 @@ const [idcategoria, setIdcategoria] = useState(null);
   }
 
   async function salvarTecido(idProduto, idTecido) {
-    let url = "http://localhost:5036/adm/associacao/tecidos-produto";
+    let url = "http://129.148.42.252:5036/adm/associacao/tecidos-produto";
 
     await axios.post(url, {
       idProduto: idProduto,
@@ -818,7 +818,7 @@ const [idcategoria, setIdcategoria] = useState(null);
                 <tr>
 
                   <td> {item.id_produto} </td>
-                  <td> <img src={'http://localhost:5036/' + item.img_link} alt="" />  </td>
+                  <td> <img src={'http://129.148.42.252:5036/' + item.img_link} alt="" />  </td>
                   <td> {item.nm_produto} </td>
                   <td> {item.ds_detalhes} </td>
                   <td> {item.id_designer} </td>

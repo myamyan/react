@@ -128,7 +128,7 @@ Soma();
 
             {sacola.map((item) =>
               <div className="produtos">
-                <img src={"http://localhost:5036/" + item.imagem}
+                <img src={"http://129.148.42.252:5036/" + item.imagem}
                 />
                 <div className="texto-produtos">
                   <p>{item.nm_produto}</p>

@@ -18,7 +18,7 @@ const navigate = useNavigate();
   
 
   async function produtoAqui() {
-    const r = await axios.get('http://localhost:5036/adm/consulta/produto/' + idProduto);
+    const r = await axios.get('http://129.148.42.252:5036/adm/consulta/produto/' + idProduto);
     setProd(r.data[0]);
   }
 
@@ -68,7 +68,7 @@ const navigate = useNavigate();
         <div className="imgprincipal">
 
     
-        <img className="bolinha" src={"http://localhost:5036/" + prod.img_link}/>
+        <img className="bolinha" src={"http://129.148.42.252:5036/" + prod.img_link}/>
 
         <div className='esfera-vector' >
     
@@ -81,10 +81,10 @@ const navigate = useNavigate();
 
       <div className="quadros">
 
-      <img className="shortpeq" src={"http://localhost:5036/" + prod.img_link}/>
+      <img className="shortpeq" src={"http://129.148.42.252:5036/" + prod.img_link}/>
 
-      <div className="quadrado">  <img className="shortpeq" src={"http://localhost:5036/" + prod.img_link}/></div>
-      <div className="quadrado">  <img className="shortpeq" src={"http://localhost:5036/" + prod.img_link}/></div>
+      <div className="quadrado">  <img className="shortpeq" src={"http://129.148.42.252:5036/" + prod.img_link}/></div>
+      <div className="quadrado">  <img className="shortpeq" src={"http://129.148.42.252:5036/" + prod.img_link}/></div>
     
       </div>
 

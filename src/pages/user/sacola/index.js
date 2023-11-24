@@ -37,7 +37,7 @@ export default function Sacola() {
 
 
     // async function adicionarcompra() {
-    //     const r = await axios.post('http://localhost:5036/user/cadastro/pedido')
+    //     const r = await axios.post('http://129.148.42.252:5036/user/cadastro/pedido')
     // }
 
 async function Soma() {
@@ -60,7 +60,7 @@ async function Soma() {
                     <div className="sacola-produtos">
                         {prod.map((produto, index) => (
                             <div className="produtos-sacola">
-                                <img className="images" src={"http://localhost:5036/" + (produto.imagem ? produto.imagem : produto.img_link)} alt={produto.nm_produto} />
+                                <img className="images" src={"http://129.148.42.252:5036/" + (produto.imagem ? produto.imagem : produto.img_link)} alt={produto.nm_produto} />
                                 <div className="produtosacola">
                                     <p>{produto.nm_produto}</p>
                                     <p>

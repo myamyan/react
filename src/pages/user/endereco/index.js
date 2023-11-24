@@ -21,7 +21,7 @@ function Enderecos() {
   async function cadastrarendereco(){
 
     
-  const resposta = await axios.post("http://localhost:5036/user/cadastro/informacoes-entrega", {
+  const resposta = await axios.post("http://129.148.42.252:5036/user/cadastro/informacoes-entrega", {
     endereco: endereco,
     cep: cep,
     complemento: complemento,
